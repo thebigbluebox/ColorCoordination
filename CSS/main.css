@@ -41,18 +41,49 @@ body {
 	transition: color .5s;
 }
 #footer{
+	position: fixed;
+	bottom: 50px;
+	left: 50px;
 	height:auto;
-	width:80%;
+	width:auto%;
 	margin: 0 auto;
 	font-family: 'Open Sans', sans-serif;
 }
-input {
-	width:100%;	
-	height:10%;
-	background:#efefef;
-	border:1px solid #dedede;
-	padding:2%;
-	margin-top:1%;
-	font-size:0.9em;
-	color:#3a3a3a;
+#colorname {
+	border: none;
+	border-bottom: 3px dotted rgba(255, 255, 255, 0.4);
+	padding: 2px 0;
+	border-radius: 0;
+}
+#buttonbottom {
+	font-size: 1em;
+}
+#social{
+	background-color:black;
+	margin-top:10px;
+	height:45px;
+}
+#social li{
+	display:inline-block;
+	list-style:none;
+}
+#socialimages {
+	text-align:center;
+}
+.icon{
+	background-color: black;
+	-o-transition:.5s;
+	-ms-transition:.5s;
+	-moz-transition:.5s;
+	-webkit-transition:.5s;
+	transition:.5s;
+}
+#GITico:hover{
+	background-color:#8CCE13;
+}
+#FBico:hover{
+	background-color: #3B5998;
+}
+#LINico:hover{
+	background-color: #4875B4;
 }

@@ -1,5 +1,6 @@
 var myDataRef = new Firebase('https://colorcordination.firebaseio.com/');
 var colorRef = myDataRef.child("color");
+var firstplayed = true;
 function addColor (bool) {
 	var color = $("#wrapper").css("background-color").slice(4,99);
 	color = color.slice(0,color.length-1);
@@ -48,19 +49,39 @@ function changeColor(){
 				$(this).css("color","white");	
 			});
 	}
+	changeText(r,g,b);
 }
 
-
+function changeText(r, g, b, first){
+	
+	var hexr = r.toString(16);
+	var hexg = g.toString(16);
+	var hexb = b.toString(16);
+	var colorhex = "#" + hexr + hexg + hexb;
+	//$("#colorname").stop(true,true).hide("fast");
+	if(firstplayed == true){
+		$("#colorname").fadeOut(1000, function(){
+			$("#colorname").text(colorhex.toUpperCase()).fadeIn(500);
+		});
+		firstplayed = false;
+	}else{
+		$("#colorname").fadeOut(200, function(){
+			$("#colorname").text(colorhex.toUpperCase()).fadeIn(200);
+		});
+	}
+	//$("#colorname").stop(true,true).show("fast");
+}
 $(document).ready(function () {
 changeColor();
+
 $(function() {
-   $(window).keypress(function(e) {
+   $("body").keypress(function(e) {
        var key = e.which;
-       if(key == 'y'){
+       if(key == 121){ //y
        	addColor(0);
        }
-       if(key == 'n'){
-       	addColor(0);
+       if(key == 110){ //n
+       	addColor(1);
        }
    });
 });
