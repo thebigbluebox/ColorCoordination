@@ -10,7 +10,6 @@ body {
 }
 * {
     outline: none;
-
 }
 #wrapper{
 	width:100%;
@@ -23,12 +22,12 @@ body {
 	height: auto;
 	padding-top:15%;
 	margin:0 auto;
-	font-size: 5em;
+	font-size: 4em;
 }
 #buttons {
 	width: 100%;
 	margin: 4% auto;
-	font-size: 13em;
+	font-size: 8em;
 	font-weight: bold;
 }
 .button:hover {
@@ -39,6 +38,27 @@ body {
 	-moz-transition: color .5s;
 	-webkit-transition: color .5s;
 	transition: color .5s;
+}
+#blurbbutton {
+	display:visible;
+	position: fixed;
+	top: 50px;
+	left: 50px;
+	width: auto;
+	height: auto;
+	text-align: left;
+	font-size: 1.250em;
+	cursor: pointer; cursor: hand;
+}
+#blurb {
+	display:none;
+	position: fixed;
+	top: 50px;
+	left: 50px;
+	width: 500px;
+	font-size: 1.25em;
+	height: auto;
+	text-align: left;
 }
 #footer{
 	position: fixed;
