@@ -48,17 +48,20 @@ body {
 	height: auto;
 	text-align: left;
 	font-size: 1.250em;
+	font-weight: bold;
+	border: none;
+	border-bottom: 3px dotted rgba(255, 255, 255, 0.4);
 	cursor: pointer; cursor: hand;
 }
 #blurb {
 	display:none;
 	position: fixed;
-	top: 50px;
-	left: 50px;
 	width: 500px;
-	font-size: 1.25em;
+	font-size: 1em;
 	height: auto;
+	margin-top:10px;
 	text-align: left;
+	font-weight: normal;
 }
 #footer{
 	position: fixed;

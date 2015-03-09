@@ -74,12 +74,12 @@ var shown = false;
 function hideBlur() {
 	if(shown == false){
 		shown = true;
-		$("#blurbbutton").stop(true,true).hide("fast");
+		//$("#blurbbutton").stop(true,true).hide("fast");
 		$("#blurb").stop(true,true).show("fast");
 	}
 	else{
 		shown = false;
-		$("#blurbbutton").stop(true,true).show("fast");
+		//$("#blurbbutton").stop(true,true).show("fast");
 		$("#blurb").stop(true,true).hide("fast");	
 	}
 }
