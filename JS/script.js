@@ -69,7 +69,19 @@ function changeText(r, g, b, first){
 			$("#colorname").text(colorhex.toUpperCase()).fadeIn(200);
 		});
 	}
-	//$("#colorname").stop(true,true).show("fast");
+}
+var shown = false;
+function hideBlur() {
+	if(shown == false){
+		shown = true;
+		$("#blurbbutton").stop(true,true).hide("fast");
+		$("#blurb").stop(true,true).show("fast");
+	}
+	else{
+		shown = false;
+		$("#blurbbutton").stop(true,true).show("fast");
+		$("#blurb").stop(true,true).hide("fast");	
+	}
 }
 $(document).ready(function () {
 changeColor();
@@ -86,7 +98,18 @@ $(function() {
    });
 });
 
+$("#blurbbutton").click(function(){
+	hideBlur();
+});
 
+$("body").click(function(){
+	if(shown == true){
+	hideBlur();
+}
+});
+$('#blurbbutton, body').on('click', function(e){
+    e.stopPropagation();
+});
 $("#yes").click(function(){
 	addColor(0);
 	});
