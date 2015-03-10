@@ -1,6 +1,8 @@
 var myDataRef = new Firebase('https://colorcordination.firebaseio.com/');
-var colorRef = myDataRef.child("color");
+var id;
 var firstplayed = true;
+var first = true;
+var myref;
 function addColor (bool) {
 	var color = $("#wrapper").css("background-color").slice(4,99);
 	color = color.slice(0,color.length-1);
@@ -11,12 +13,24 @@ function addColor (bool) {
 	var b = Number(color.slice(1,color.length));
 	
 	if((r != NaN)&(g != NaN)&(b != NaN)){
-		myDataRef.push({
+		if(first){id = myDataRef.push({color:{
 			r: r,
 			g: g,
 			b: b,
 			like:bool
-		});
+		}});
+			first = false;
+			myref = myDataRef.child(id.path.n[0]);
+		}
+		else{
+			myref.push({color:{
+			r: r,
+			g: g,
+			b: b,
+			like:bool
+		}});
+
+		}
 	}
 	changeColor();
 }
